@@ -1,0 +1,57 @@
+﻿<h1>Featured - This Week in Deals!</h1>
+
+<div class="flex-container products-page">
+    <!-- Sidebar for Filters -->
+    <aside class="cart-sidebar">
+        <h2>Filters</h2>
+        <form id="filterForm" onsubmit="return false;">
+            <label for="category">Category:</label><br />
+            <select id="category" name="category" class="input data" onchange="applyFilters()">
+                <option value="">All</option>
+            </select><br /><br />
+
+            <label for="price">Max Price:</label><br />
+            <input type="number" id="price" name="price" class="input data" placeholder="1000" onchange="applyFilters()" /><br /><br />
+        </form>
+    </aside>
+
+    <!-- Main Product Grid -->
+    <div class="product-grid" id="productContainer">
+        @if (Model.Products != null && Model.Products.Any())
+        {
+            foreach (var product in Model.Products)
+            {
+                <div class="product-card" data-category="@product.Category" data-price="@product.Price" data-id="@product.ItemId">
+                    <img src="@product.ImageUrl" class="img--product" alt="@product.Name" />
+                    <h3>@product.Name</h3>
+                    <p>£@product.Price</p>
+                    <button class="btn toggle-details">Find Out More</button>
+
+                    <div class="product-details" style="display: none; margin-top: 10px;">
+                        <p>@product.Description</p>
+                        <p><strong>Category:</strong> @product.Category</p>
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+
+    <!-- Cart Sidebar -->
+    <aside id="cartSidebar" class="cart-sidebar">
+        <h2>Your Cart</h2>
+        <ul id="cartItems" style="list-style: none; padding-left: 0;"></ul>
+        <div id="totalCost" style="margin-top: 20px; font-weight: bold;">
+            Total Cost: £0.00
+        </div>
+    </aside>
+</div>
+
+@section Scripts {
+    <script src="~/js/products.js"></script>
+    <script>
+        const products = @Html.Raw(Json.Serialize(Model.Products));
+    </script>
+}
+

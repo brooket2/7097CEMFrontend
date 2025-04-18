@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Product Reviews";
+}
+
+<h1>Product Reviews</h1>
+
+<div class="flex-container reviews-page">
+
+    <!-- Sidebar Form -->
+    <div class="form gray review-form">
+        <h2>Add a Review</h2>
+        <form id="reviewForm">
+            <div class="form-group">
+                <label for="itemName"><strong>Item:</strong></label>
+                <select id="itemName" name="itemID" class="input"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="reviewBody"><strong>Review:</strong></label><br />
+                <textarea id="reviewBody" name="reviewBody" class="input data" rows="4" placeholder="Write your review..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="rating"><strong>Rating (0–5):</strong></label><br />
+                <input type="number" id="rating" name="rating" class="input" min="0" max="5" placeholder="Enter rating" />
+            </div>
+
+            <button type="submit" class="btn wide">Submit Review</button>
+        </form>
+    </div>
+
+    <!-- Product Reviews Grid -->
+    <div id="reviewGrid" class="review-grid">
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/reviews.js"></script>
+}
+
+
+
+
+

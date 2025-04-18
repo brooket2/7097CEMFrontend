@@ -1,0 +1,57 @@
+﻿@model _7097CEMShoppingSite.ViewModels.AuthViewModel
+
+@{
+    ViewData["Title"] = "Login / Register";
+}
+
+<h1>Welcome Back!</h1>
+
+<main class="flex-container auth-flex">
+    <!-- Login Form -->
+    <form id="loginForm" class="form form--auth gray">
+        <h2 class="form-title">Login</h2>
+        <ul>
+            <li>
+                <input id="loginUsername" class="input data" placeholder="Username" />
+                <span id="loginUsernameError" class="text-danger"></span>
+            </li>
+            <li>
+                <input id="loginPassword" class="input data" type="password" placeholder="Password" />
+                <span id="loginPasswordError" class="text-danger"></span>
+            </li>
+            <li>
+                <button type="button" id="loginBtn" class="btn wide">Login</button>
+            </li>
+            <li>
+                <span id="loginMessage" class="text-success"></span>
+            </li>
+        </ul>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="form form--auth gray">
+        <h2 class="form-title">Register</h2>
+        <ul>
+            <li>
+                <input id="registerUsername" class="input data" placeholder="New Username" />
+                <span id="registerUsernameError" class="text-danger"></span>
+            </li>
+            <li>
+                <input id="registerPassword" class="input data" type="password" placeholder="New Password" />
+                <span id="registerPasswordError" class="text-danger"></span>
+            </li>
+            <li>
+                <button type="button" id="registerBtn" class="btn wide">Register</button>
+            </li>
+            <li>
+                <span id="registerMessage" class="text-success"></span>
+            </li>
+        </ul>
+    </form>
+</main>
+
+
+
+@section Scripts {
+    <script src="~/js/login.js"></script>
+}

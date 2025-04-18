@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PC Parts Shopping Mall</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/ShoppingMallLogoV2.png">
+
+</head>
+
+<body>
+    <header class="site-header">
+        <img src="/ShoppingMallLogoV2.png" class="img--logo" alt="PC Parts Shopping Mall Logo">
+        <input type="text" class="input" placeholder="Search...">
+        <button type="button" class="search-button" aria-label="Search">Search</button>
+    </header>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a class="btn" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a class="btn" asp-area="" asp-controller="Home" asp-action="Products">Products</a></li>
+            <li><a class="btn" asp-area="" asp-controller="Home" asp-action="Reviews">Reviews</a></li>
+            <li><a class="btn" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a></li>
+            <li><a class="btn" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a></li>
+            <li><a class="btn" asp-area="" asp-controller="Home" asp-action="Login">Login/Register</a></li>
+        </ul>
+    </nav>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <ul>
+            <li>&copy; 2025 - PC Parts Shopping Mall - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+            <li><img src="/Instagram_logo_2022.svg" class="img--SocialMedialogo" alt="Instagram Logo 2022" /> : @@PCPartz</li>
+            <li><img src="/YouTube_2024.svg" class="img--SocialMedialogo" alt="YouTube Logo 2024" /> : https://www.youtube.com/@@PcPartz</li>
+            <li>Contact Us by Phone: 01135 556789</li>
+        </ul>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/service-worker.js")
+                    .then((reg) => console.log("✅ Service Worker registered:", reg))
+                    .catch((err) => console.error("❌ Service Worker error:", err));
+            });
+        }
+    </script>
+</body>
+</html>

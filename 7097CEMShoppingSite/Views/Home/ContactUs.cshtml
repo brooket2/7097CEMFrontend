@@ -1,0 +1,67 @@
+﻿@page
+@model _7097CEMShoppingSite.Views.Home.ContactUsModel
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<h1>Contact Us</h1>
+
+<div class="flex-container contact-us-page" style="background-color: var(--purple); align-items: stretch;">
+
+    <div class="form gray contact-info" style="height: 100%; width: 30%; padding: 20px;">
+
+        <h2>Contact Information</h2>
+
+        <h3>Customer Support</h3>
+        <p>If you have any questions we are here to help!:</p>
+        <p>
+            Email: email@email.com<br />
+            Phone: 01135 556789<br />
+        </p>
+
+        <h3>Physical Address</h3>
+        <p>
+            Tech Mall, 123 Tech Ave, Silicon City<br />
+            Phone: (800) 123-4567<br />
+            Email: contact@techmall.com
+        </p>
+
+        <h3>Our Working Hours</h3>
+        <p>
+            Monday - Friday: 9:00 AM - 6:00 PM<br />
+            Saturday: 10:00 AM - 4:00 PM<br />
+            Sunday: Closed
+        </p>
+
+    </div>
+
+    <div class="contact-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 70%; padding: 20px;">
+
+        <div class="product-card">
+            <h3>Customer Support Chat</h3>
+            <p>Need help right now? Start a chat with our support team:</p>
+            <p><button>Start Chat</button></p>
+        </div>
+
+        <div class="product-card">
+            <h3>Frequently Asked Questions (FAQ)</h3>
+            <ul>
+                <li><strong>Q:</strong> How can I track my order? <br /> <strong>A:</strong> Give us a call and we can confirm its location.</li>
+                <li><strong>Q:</strong> What is your return policy? <br /> <strong>A:</strong> Seems like a you problem! Only joking, return within 30 days for a full refund no questions asked!</li>
+                <li><strong>Q:</strong> How can I cancel my order? <br /> <strong>A:</strong> Orders can be canceled within 24 hours. Give us a call or speak to a member of staff in store!</li>
+            </ul>
+        </div>
+
+        <div class="product-card">
+            <h3>Location</h3>
+            <p>Find us using the map below:</p>
+            <iframe width="100%"
+                    height="200"
+                    frameborder="0"
+                    style="border-radius: 8px;"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-1.5100%2C52.4078%2C-1.5090%2C52.4090&layer=mapnik&marker=52.4083%2C-1.5094"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
