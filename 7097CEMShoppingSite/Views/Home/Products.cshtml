@@ -1,6 +1,6 @@
 ﻿<h1>Featured - This Week in Deals!</h1>
 
-<div class="flex-container products-page">
+<div class="flex-container reviews-page">
     <!-- Sidebar for Filters -->
     <aside class="cart-sidebar">
         <h2>Filters</h2>
@@ -17,7 +17,7 @@
 
     <!-- Main Product Grid -->
     <div class="product-grid" id="productContainer">
-        @if (Model.Products != null && Model.Products.Any())
+        @if (Model.Products != null)
         {
             foreach (var product in Model.Products)
             {
@@ -27,7 +27,7 @@
                     <p>£@product.Price</p>
                     <button class="btn toggle-details">Find Out More</button>
 
-                    <div class="product-details" style="display: none; margin-top: 10px;">
+                    <div class="product-details">
                         <p>@product.Description</p>
                         <p><strong>Category:</strong> @product.Category</p>
                         <button class="btn add-to-cart">Add to Cart</button>
@@ -41,8 +41,8 @@
     <!-- Cart Sidebar -->
     <aside id="cartSidebar" class="cart-sidebar">
         <h2>Your Cart</h2>
-        <ul id="cartItems" style="list-style: none; padding-left: 0;"></ul>
-        <div id="totalCost" style="margin-top: 20px; font-weight: bold;">
+        <ul id="cartItems"></ul>
+        <div id="totalCost">
             Total Cost: £0.00
         </div>
     </aside>
